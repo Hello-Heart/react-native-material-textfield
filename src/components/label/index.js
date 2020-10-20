@@ -109,7 +109,7 @@ export default class Label extends PureComponent {
     };
 
     return (
-      <Animated.View style={[styles.container, containerStyle]}>
+      <Animated.View pointerEvents="box-none" style={[styles.container, containerStyle]}>
         <Animated.Text style={[styles.text, style, textStyle]} {...props}>
           {label}
         </Animated.Text>
