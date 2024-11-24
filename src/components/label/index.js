@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { Animated, ViewPropTypes } from 'react-native';
+import { Animated } from 'react-native';
+import {TextPropTypes} from 'deprecated-react-native-prop-types';
 
 import styles from './styles';
 
@@ -42,7 +43,8 @@ export default class Label extends PureComponent {
       x1: PropTypes.number,
       y1: PropTypes.number,
     }),
-    style: ViewPropTypes.style,
+
+    style: TextPropTypes.style,
     label: PropTypes.string,
   };
 
@@ -109,7 +111,7 @@ export default class Label extends PureComponent {
     };
 
     return (
-      <Animated.View pointerEvents="box-none" style={[styles.container, containerStyle]}>
+      <Animated.View style={[styles.container, containerStyle]}>
         <Animated.Text style={[styles.text, style, textStyle]} {...props}>
           {label}
         </Animated.Text>
