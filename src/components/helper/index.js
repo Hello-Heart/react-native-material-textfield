@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { Animated, ViewPropTypes } from 'react-native';
+import { Animated } from 'react-native';
+import {TextPropTypes} from 'deprecated-react-native-prop-types';
 
 import styles from './styles';
 
@@ -10,7 +11,9 @@ export default class Helper extends PureComponent {
     error: PropTypes.string,
 
     disabled: PropTypes.bool,
-    style: ViewPropTypes.style,
+
+    style: TextPropTypes.style,
+
     baseColor: PropTypes.string,
     errorColor: PropTypes.string,
 
