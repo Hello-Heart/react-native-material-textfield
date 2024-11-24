@@ -8,8 +8,7 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
-
-import {TextPropTypes, ViewPropTypes} from 'deprecated-react-native-prop-types';
+import {TextPropTypes, ViewPropTypes, TextInputPropTypes} from 'deprecated-react-native-prop-types';
 
 import Line from '../line';
 import Label from '../label';
@@ -80,7 +79,6 @@ export default class TextField extends PureComponent {
       input: PropTypes.number,
       left: PropTypes.number,
       right: PropTypes.number,
-      bottom: PropTypes.number,
     }),
 
     labelOffset: Label.propTypes.offset,
@@ -88,7 +86,7 @@ export default class TextField extends PureComponent {
     labelTextStyle: TextPropTypes.style,
     titleTextStyle: TextPropTypes.style,
     affixTextStyle: TextPropTypes.style,
- 
+
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
     baseColor: PropTypes.string,
@@ -130,7 +128,6 @@ export default class TextField extends PureComponent {
     input: 8,
     left: 0,
     right: 0,
-    bottom: 8,
   };
 
   static labelOffset = {
@@ -453,7 +450,8 @@ export default class TextField extends PureComponent {
   inputProps() {
     let store = {};
 
-    for (let key in TextInput.propTypes) {
+    for (let key in TextInputPropTypes) {
+      
       if ('defaultValue' === key) {
         continue;
       }
@@ -573,7 +571,6 @@ export default class TextField extends PureComponent {
     let containerStyle =  {
       paddingLeft: contentInset.left,
       paddingRight: contentInset.right,
-      minHeight: contentInset.bottom,
     };
 
     let styleProps = {
